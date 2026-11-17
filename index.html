@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipos de Dados & Variáveis na Programação (com foco em Python)</title>
+  <meta name="description" content="Aplicação web educativa, moderna e interativa sobre Tipos de Dados e Variáveis na Programação, com simulador prático em Python, mapa mental e cheat sheet.">
+
+  <!-- Google Fonts: Inter, Poppins e JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 (Ícones Modernos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Folha de Estilos Customizada -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Barra de Progresso de Leitura -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       BARRA DE NAVEGAÇÃO FIXA (STICKY NAVBAR)
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-brands fa-python"></i>
+        </div>
+        <span>Data<span class="highlight">Types</span>.py</span>
+      </a>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#conceito" class="nav-link">Variáveis</a></li>
+          <li><a href="#tipos" class="nav-link">Tipos de Dados</a></li>
+          <li><a href="#galeria" class="nav-link">Mapa Mental & Cheat Sheet</a></li>
+          <li><a href="#comparativo" class="nav-link">Comparativo</a></li>
+          <li><a href="#playground" class="nav-link">Playground Python</a></li>
+          <li><a href="#dicas-ouro" class="nav-link">Dicas de Ouro</a></li>
+          <li><a href="#galeria" class="nav-cta"><i class="fa-solid fa-download"></i> Baixar Imagens</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão Menu Mobile -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu de Navegação">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         HEADER / HERO SECTION
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-gold"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <!-- Badges Tecnológicos -->
+          <div class="hero-badges">
+            <span class="tech-badge"><i class="fa-brands fa-python"></i> Python 3.14+</span>
+            <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Tipagem Dinâmica & Forte</span>
+            <span class="tech-badge"><i class="fa-solid fa-graduation-cap"></i> Engenharia de Software</span>
+          </div>
+
+          <!-- Título Principal -->
+          <h1 class="hero-title">
+            Tipos de Dados & Variáveis <br>
+            <span class="gradient-text">na Programação</span>
+          </h1>
+
+          <!-- Subtítulo / Definição Conceitual Oficial -->
+          <blockquote class="hero-subtitle">
+            <i class="fa-solid fa-quote-left text-gold"></i>
+            <em>"Na computação e na programação, <strong>os tipos de dados definem a natureza dos valores</strong> que uma variável pode armazenar e <strong>quais operações podem ser feitas com eles</strong>."</em>
+          </blockquote>
+
+          <!-- Ações Rápidas -->
+          <div class="hero-actions">
+            <a href="#conceito" class="btn btn-primary">
+              <i class="fa-solid fa-compass"></i> Explorar Conteúdo
+            </a>
+            <a href="#galeria" class="btn btn-secondary">
+              <i class="fa-solid fa-diagram-project"></i> Ver Mapa Mental &amp; Cheat Sheet
+            </a>
+          </div>
+
+          <!-- Estatísticas Educativas -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Tipos Primitivos Fundamentais</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number gold">6+</div>
+              <div class="stat-label">Estruturas Compostas &amp; SQL</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number green">4</div>
+              <div class="stat-label">Linguagens Comparadas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Dicas de Ouro Essenciais</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 1: O QUE SÃO VARIÁVEIS? (CONCEITO + IMAGEM 1)
+         ========================================================================= -->
+    <section class="section" id="conceito">
+      <div class="container">
+        <div class="center-header">
+          <span class="section-tag"><i class="fa-solid fa-box-open"></i> Seção 1</span>
+          <h2 class="section-title">O que são Variáveis?</h2>
+          <p class="section-subtitle">
+            Entenda o mecanismo fundamental que permite aos computadores armazenar, manipular e consultar dados em tempo de execução.
+          </p>
+        </div>
+
+        <div class="variables-grid">
+          <!-- Card de Explicação Conceitual (Analogia da Caixa) -->
+          <article class="analogy-card">
+            <h3><i class="fa-solid fa-lightbulb"></i> A Analogia da Caixa Etiquetada</h3>
+            <p>
+              Imagine que a memória RAM do computador é um grande depósito com gavetas e caixas. 
+              Uma <strong>variável</strong> funciona exatamente como uma <strong>caixa com uma etiqueta de identificação</strong>:
+            </p>
+            <p>
+              A <em>etiqueta</em> é o <strong>nome</strong> da variável (ex.: <code>nome</code>), enquanto o que é colocado <em>dentro</em> da caixa é o <strong>valor</strong> guardado para uso posterior (ex.: <code>"Maria"</code>).
+            </p>
+
+            <!-- Demonstração Visual em CSS da Analogia da Caixa -->
+            <div class="box-diagram">
+              <div class="memory-box">
+                <div class="box-tag">nome</div>
+                <div class="box-value text-cyan">"Maria"</div>
+                <div class="box-meta">Tipo: str (String de Texto)</div>
+                <div class="box-address">RAM: 0x7ffeef89c310</div>
+              </div>
+
+              <div class="memory-box">
+                <div class="box-tag">idade</div>
+                <div class="box-value text-gold">18</div>
+                <div class="box-meta">Tipo: int (Inteiro)</div>
+                <div class="box-address">RAM: 0x7ffeef89c330</div>
+              </div>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 1rem;">
+              <strong class="text-cyan"><i class="fa-solid fa-code-fork"></i> Em Python:</strong> A variável não guarda o dado diretamente; ela atua como uma <strong>referência (ponteiro)</strong> que aponta para o objeto residente na memória. Quando você altera o valor, o Python redireciona a etiqueta para um novo endereço de forma transparente!
+            </p>
+          </article>
+
+          <!-- Imagem 1 em Destaque com Clique para Ampliar -->
+          <div class="image-feature-card">
+            <div class="image-wrapper" data-lightbox-index="0" title="Clique para ampliar o infográfico de Variáveis em Python">
+              <img src="assets/images/variaveis-python.png" alt="Infográfico didático sobre o que são variáveis em Python, analogia da caixa e regras de nomenclatura" loading="lazy">
+              <div class="image-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar em Tela Cheia</span>
+                <span style="font-size: 0.8rem; color: #E9ECEF;">Visualizar em Alta Resolução</span>
+              </div>
+            </div>
+            <div class="image-caption">
+              <div>
+                <h4>Infográfico: Variáveis em Python</h4>
+                <p>Analogia da caixa na memória e regras PEP 8</p>
+              </div>
+              <span class="zoom-hint"><i class="fa-solid fa-expand"></i> Tela Cheia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regras de Nomenclatura (Correto vs Evite) -->
+        <div class="rules-container">
+          <div class="center-header" style="margin-bottom: 2rem;">
+            <span class="section-tag gold"><i class="fa-solid fa-spell-check"></i> Boas Práticas &amp; Sintaxe</span>
+            <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: #fff;">Regras de Nomenclatura de Variáveis</h3>
+            <p class="section-subtitle">
+              Convenções da linguagem Python (PEP 8) e regras universais para escrever identificadores limpos, legíveis e livres de erros de compilação.
+            </p>
+          </div>
+
+          <div class="rules-grid">
+            <!-- Card Correto -->
+            <div class="rules-card correct">
+              <div class="rules-header">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>CORRETO (Boas Práticas)</span>
+              </div>
+              <ul class="rules-list">
+                <li class="rule-item">
+                  <i class="fa-solid fa-check"></i>
+                  <div>
+                    <span class="rule-code">nome = "Ana"</span>
+                    <div class="rule-desc">Nomes claros, objetivos e autoexplicativos. Facilita a manutenção do código.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-check"></i>
+                  <div>
+                    <span class="rule-code">idade_aluno = 16</span>
+                    <div class="rule-desc">Uso de <strong>snake_case</strong> (palavras separadas por underline <code>_</code>), o padrão oficial do Python (PEP 8).</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-check"></i>
+                  <div>
+                    <span class="rule-code">precoTotal = 25.50</span>
+                    <div class="rule-desc"><strong>camelCase</strong> é sintaticamente válido em Python e padrão nativo em JavaScript/Java.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-check"></i>
+                  <div>
+                    <span class="rule-code">usuario_ativo = True</span>
+                    <div class="rule-desc">Prefixos como <code>is_</code>, <code>has_</code> ou adjetivos são ideais para indicar variáveis booleanas.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-check"></i>
+                  <div>
+                    <span class="rule-code">PI_CONSTANTE = 3.14</span>
+                    <div class="rule-desc">Nomes em <strong>SCREAMING_SNAKE_CASE</strong> indicam constantes que não devem ser alteradas.</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Evite / Inválido -->
+            <div class="rules-card avoid">
+              <div class="rules-header">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span>EVITE OU ERRO DE SINTAXE</span>
+              </div>
+              <ul class="rules-list">
+                <li class="rule-item">
+                  <i class="fa-solid fa-xmark"></i>
+                  <div>
+                    <span class="rule-code">1nome = "Ana"</span>
+                    <div class="rule-desc"><strong class="text-red">SyntaxError:</strong> Variáveis NÃO podem começar com números. O compilador confunde com literais numéricos.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-xmark"></i>
+                  <div>
+                    <span class="rule-code">nome completo = "Ana"</span>
+                    <div class="rule-desc"><strong class="text-red">SyntaxError:</strong> Variáveis NÃO podem conter espaços em branco. O interpretador lê como duas instruções soltas.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-xmark"></i>
+                  <div>
+                    <span class="rule-code">idade-aluno = 16</span>
+                    <div class="rule-desc"><strong class="text-red">SyntaxError:</strong> O hífen é lido pelo interpretador como o operador aritmético de subtração (<code>idade - aluno</code>).</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-xmark"></i>
+                  <div>
+                    <span class="rule-code">x = "Ana"</span>
+                    <div class="rule-desc"><strong>Má Prática:</strong> Nomes com apenas uma letra são vagos e prejudicam a compreensão do sistema.</div>
+                  </div>
+                </li>
+                <li class="rule-item">
+                  <i class="fa-solid fa-xmark"></i>
+                  <div>
+                    <span class="rule-code">class = "A"</span>
+                    <div class="rule-desc"><strong class="text-red">SyntaxError:</strong> Não se pode usar palavras reservadas da linguagem (ex.: <code>class</code>, <code>def</code>, <code>for</code>, <code>import</code>).</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mini Validador Interativo de Identificadores Python -->
+          <div class="interactive-naming-tester">
+            <div class="tester-header">
+              <i class="fa-solid fa-vial-circle-check"></i>
+              <span>Testador Interativo de Nomes de Variáveis:</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">
+              Digite um nome de variável no campo abaixo para testar instantaneamente se ele é aceito pelas regras de sintaxe do Python:
+            </p>
+            <div class="tester-controls">
+              <input type="text" id="var-tester-input" class="tester-input" placeholder="Ex: idade_aluno, 1nome, nome completo, class..." value="idade_aluno" autocomplete="off">
+              <div id="var-tester-result" class="tester-feedback">
+                <span style="color: var(--accent-green);"><i class="fa-solid fa-circle-check"></i> <strong>Identificador Válido!</strong> <code>idade_aluno</code> segue o padrão snake_case.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 2: TIPOS DE DADOS PRIMITIVOS E COMPOSTOS (CARDS INTERATIVOS)
+         ========================================================================= -->
+    <section class="section alt-bg" id="tipos">
+      <div class="container">
+        <div class="center-header">
+          <span class="section-tag"><i class="fa-solid fa-cubes"></i> Seção 2</span>
+          <h2 class="section-title">Tipos de Dados Primitivos e Compostos</h2>
+          <p class="section-subtitle">
+            Cada tipo de dado determina a quantidade de memória alocada, a precisão e as operações aritméticas ou lógicas possíveis.
+          </p>
+        </div>
+
+        <!-- Abas / Filtros Interativos -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-filter="all">
+            <i class="fa-solid fa-layer-group"></i> Todos os Tipos
+          </button>
+          <button class="tab-btn" data-filter="primitivo">
+            <i class="fa-solid fa-atom"></i> Tipos Primitivos
+          </button>
+          <button class="tab-btn" data-filter="composto">
+            <i class="fa-solid fa-network-wired"></i> Tipos Compostos
+          </button>
+          <button class="tab-btn" data-filter="outros">
+            <i class="fa-solid fa-database"></i> Outros Contextos (SQL &amp; Dados)
+          </button>
+        </div>
+
+        <!-- Grade de Cards Interativos -->
+        <div class="data-types-grid">
+
+          <!-- 1. int -->
+          <article class="type-card" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-hashtag"></i> int</h3>
+              <span class="type-category-pill">Primitivo</span>
+            </div>
+            <p class="type-desc">
+              Representa <strong>números inteiros</strong> (positivos, negativos ou zero) sem qualquer fração ou casa decimal. No Python 3, a precisão é ilimitada (limitada apenas pela memória RAM).
+            </p>
+            <div class="type-code-box">
+              <span class="var">quantidade</span> = <span class="num">10</span><br>
+              <span class="var">temperatura</span> = <span class="num">-42</span><br>
+              <span class="var">contador</span> = <span class="num">0</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-microchip"></i> Memória: 28 bytes (objeto Python)</span>
+              <button class="type-test-btn" data-sample="int"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 2. float -->
+          <article class="type-card featured-gold" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-gold"><i class="fa-solid fa-percent"></i> float</h3>
+              <span class="type-category-pill gold">Primitivo</span>
+            </div>
+            <p class="type-desc">
+              Números reais ou com <strong>ponto flutuante</strong> (casas decimais). Baseia-se no padrão IEEE 754 de precisão dupla de 64 bits (aproximadamente 15 a 17 dígitos de precisão).
+            </p>
+            <div class="type-code-box">
+              <span class="var">pi</span> = <span class="num">3.14159</span><br>
+              <span class="var">preco</span> = <span class="num">19.90</span><br>
+              <span class="var">saldo</span> = <span class="num">-150.75</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-microchip"></i> 64-bit Double Precision</span>
+              <button class="type-test-btn" data-sample="float"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 3. bool -->
+          <article class="type-card" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-toggle-on"></i> bool</h3>
+              <span class="type-category-pill">Primitivo</span>
+            </div>
+            <p class="type-desc">
+              Tipo <strong>booleano</strong> fundamentado na álgebra de George Boole. Possui apenas dois estados lógicos fundamentais: <code>True</code> (Verdadeiro) ou <code>False</code> (Falso).
+            </p>
+            <div class="type-code-box">
+              <span class="var">estudante</span> = <span class="bool">True</span><br>
+              <span class="var">bloqueado</span> = <span class="bool">False</span><br>
+              <span class="var">maior_idade</span> = <span class="num">18</span> &gt;= <span class="num">18</span> <span class="comment"># True</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-code"></i> Subtipo de int no Python</span>
+              <button class="type-test-btn" data-sample="bool"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 4. char -->
+          <article class="type-card" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-font"></i> char</h3>
+              <span class="type-category-pill">Primitivo (C/Java)</span>
+            </div>
+            <p class="type-desc">
+              Armazena um <strong>caractere alfanumérico individual</strong> ('A', '7', '$'). Em C/Java é um primitivo de 8/16 bits; em Python, é tratado de forma transparente como uma string de tamanho 1.
+            </p>
+            <div class="type-code-box">
+              <span class="comment"># Em Python: str de comprimento 1</span><br>
+              <span class="var">letra</span> = <span class="str">'A'</span><br>
+              <span class="var">simbolo</span> = <span class="str">'$'</span><br>
+              <span class="var">codigo_ascii</span> = <span class="kw">ord</span>(<span class="str">'A'</span>) <span class="comment"># 65</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-table"></i> Tabela ASCII &amp; Unicode</span>
+              <button class="type-test-btn" data-sample="string"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 5. string (str) -->
+          <article class="type-card featured-gold" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-gold"><i class="fa-solid fa-quote-right"></i> string (str)</h3>
+              <span class="type-category-pill gold">Texto / Primitivo</span>
+            </div>
+            <p class="type-desc">
+              Cadeia ordenada e <strong>imutável de caracteres Unicode</strong>. Permite interpolação com f-strings (<code>f"..."</code>), fatiamento (slice), concatenação e busca indexada.
+            </p>
+            <div class="type-code-box">
+              <span class="var">mensagem</span> = <span class="str">"Olá, mundo!"</span><br>
+              <span class="var">cidade</span> = <span class="str">"Palmas"</span><br>
+              <span class="var">apresentacao</span> = <span class="str">f"{mensagem} Bem-vindo a {cidade}."</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-lock"></i> Objeto Imutável na RAM</span>
+              <button class="type-test-btn" data-sample="string"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 6. byte (bytes) -->
+          <article class="type-card" data-category="primitivo">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-binary"></i> byte / bytes</h3>
+              <span class="type-category-pill">Dados Brutos</span>
+            </div>
+            <p class="type-desc">
+              Sequência de <strong>dados binários de 8 bits</strong> (valores de 0 a 255). Essencial em protocolos de rede TCP/IP, criptografia, leitura de arquivos binários e streams de dados.
+            </p>
+            <div class="type-code-box">
+              <span class="var">dados_binarios</span> = <span class="kw">b</span><span class="str">"Python"</span><br>
+              <span class="var">byte_array</span> = <span class="kw">bytearray</span>([<span class="num">65</span>, <span class="num">66</span>, <span class="num">67</span>])<br>
+              <span class="kw">print</span>(<span class="var">byte_array</span>) <span class="comment"># bytearray(b'ABC')</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-network-wired"></i> Redes, Arquivos &amp; Cripto</span>
+              <button class="type-test-btn" data-sample="string"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 7. Vetores e Matrizes (list) -->
+          <article class="type-card" data-category="composto">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-list-ol"></i> Vetores &amp; Matrizes</h3>
+              <span class="type-category-pill">Composto (list)</span>
+            </div>
+            <p class="type-desc">
+              Estruturas dinâmicas, ordenadas e <strong>mutáveis</strong>. Vetores 1D (<code>[10, 20, 30]</code>) e Matrizes bidimensionais (linhas e colunas em listas aninhadas).
+            </p>
+            <div class="type-code-box">
+              <span class="comment"># Vetor 1D:</span><br>
+              <span class="var">vetor</span> = [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>]<br>
+              <span class="comment"># Matriz 2x2:</span><br>
+              <span class="var">matriz</span> = [[<span class="num">1</span>, <span class="num">2</span>], [<span class="num">3</span>, <span class="num">4</span>]]
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-arrows-split-up-and-left"></i> Acesso por índice O(1)</span>
+              <button class="type-test-btn" data-sample="int"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 8. Objetos e Dicionários (dict / JSON) -->
+          <article class="type-card featured-gold" data-category="composto">
+            <div class="type-card-header">
+              <h3 class="type-name text-gold"><i class="fa-solid fa-diagram-nested"></i> Dicionários &amp; Objetos</h3>
+              <span class="type-category-pill gold">Composto (dict)</span>
+            </div>
+            <p class="type-desc">
+              Mapeamento de <strong>pares chave-valor</strong> (semelhante ao JSON). As chaves são hasheadas para garantir busca, inserção e remoção em tempo ultrarrápido $O(1)$.
+            </p>
+            <div class="type-code-box">
+              <span class="var">aluno</span> = {<br>
+              &nbsp;&nbsp;<span class="str">"nome"</span>: <span class="str">"Maria"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"idade"</span>: <span class="num">18</span>,<br>
+              &nbsp;&nbsp;<span class="str">"matriculado"</span>: <span class="bool">True</span><br>
+              }
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-bolt"></i> Hash Table O(1)</span>
+              <button class="type-test-btn" data-sample="string"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 9. Enumerações (enum) -->
+          <article class="type-card" data-category="composto">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-tags"></i> Enumerações (enum)</h3>
+              <span class="type-category-pill">Composto (Enum)</span>
+            </div>
+            <p class="type-desc">
+              Conjunto de <strong>constantes simbólicas nomeadas</strong>. Evita "números mágicos" ou strings soltas no código, prevenindo erros de digitação e aumentando a legibilidade.
+            </p>
+            <div class="type-code-box">
+              <span class="kw">from</span> enum <span class="kw">import</span> Enum<br><br>
+              <span class="kw">class</span> <span class="var">Status</span>(Enum):<br>
+              &nbsp;&nbsp;ATIVO = <span class="num">1</span><br>
+              &nbsp;&nbsp;PENDENTE = <span class="num">2</span><br>
+              &nbsp;&nbsp;CANCELADO = <span class="num">3</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-shield-halved"></i> Type Safety &amp; Legibilidade</span>
+              <button class="type-test-btn" data-sample="int"><i class="fa-solid fa-play"></i> Testar</button>
+            </div>
+          </article>
+
+          <!-- 10. Banco de Dados SQL -->
+          <article class="type-card" data-category="outros">
+            <div class="type-card-header">
+              <h3 class="type-name text-cyan"><i class="fa-solid fa-database"></i> Banco de Dados (SQL)</h3>
+              <span class="type-category-pill purple">Outro Contexto</span>
+            </div>
+            <p class="type-desc">
+              Em SGBDs relacionais (PostgreSQL, MySQL, SQLite), os tipos de dados garantem integridade estrutural no disco:
+            </p>
+            <div class="type-code-box">
+              <span class="kw">VARCHAR</span>(<span class="num">100</span>) <span class="comment">-- String com limite</span><br>
+              <span class="kw">INT</span>, <span class="kw">BIGINT</span>     <span class="comment">-- Inteiros 32/64 bits</span><br>
+              <span class="kw">DECIMAL</span>(<span class="num">10</span>, <span class="num">2</span>)  <span class="comment">-- Valores monetários</span><br>
+              <span class="kw">DATE</span>, <span class="kw">TIMESTAMP</span> <span class="comment">-- Gestão temporal</span><br>
+              <span class="kw">BLOB</span>             <span class="comment">-- Arquivos binários</span>
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-server"></i> ACID &amp; Integridade Relacional</span>
+              <a href="#galeria" class="type-test-btn"><i class="fa-solid fa-image"></i> Ver Mapa</a>
+            </div>
+          </article>
+
+          <!-- 11. Ciência de Dados & Estatística -->
+          <article class="type-card featured-gold" data-category="outros">
+            <div class="type-card-header">
+              <h3 class="type-name text-gold"><i class="fa-solid fa-chart-line"></i> Ciência de Dados</h3>
+              <span class="type-category-pill gold">Data Science</span>
+            </div>
+            <p class="type-desc">
+              Na estatística e no Pandas/NumPy, os dados se dividem segundo sua escala matemática:
+            </p>
+            <div class="type-code-box">
+              <span class="comment"># Qualitativos (Categóricos):</span><br>
+              • <span class="var">Nominais</span>: Sem ordem (ex.: Gênero, Cidade)<br>
+              • <span class="var">Ordinais</span>: Com ordem (ex.: Baixo, Médio, Alto)<br><br>
+              <span class="comment"># Quantitativos (Numéricos):</span><br>
+              • <span class="var">Discretos</span>: Contagens (ex.: 2 filhos, 4 portas)<br>
+              • <span class="var">Contínuos</span>: Mensurações (ex.: 1.75m, 68.4kg)
+            </div>
+            <div class="type-card-footer">
+              <span class="type-meta-tag"><i class="fa-solid fa-brain"></i> Pandas dtypes &amp; ML</span>
+              <a href="#galeria" class="type-test-btn"><i class="fa-solid fa-image"></i> Ver Mapa</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 3: GALERIA VISUAL — MAPA MENTAL & CHEAT SHEET (IMAGENS 2 E 3)
+         ========================================================================= -->
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="center-header">
+          <span class="section-tag gold"><i class="fa-solid fa-images"></i> Seção 3</span>
+          <h2 class="section-title">Galeria Visual: Mapa Mental &amp; Cheat Sheet</h2>
+          <p class="section-subtitle">
+            Recursos visuais didáticos em alta resolução para estudo rápido e revisão. Clique em qualquer imagem para abrir o visualizador em tela cheia com zoom interativo.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card da Imagem 2: Mapa Mental -->
+          <article class="gallery-card">
+            <div class="gallery-image-wrapper" data-lightbox-index="1" title="Clique para abrir o Mapa Mental de Tipos de Dados">
+              <img src="assets/images/mapa-mental.jpg" alt="Mapa Mental completo de Tipos de Dados na Programação, Primitivos, Compostos e Outros Contextos" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> Abrir em Tela Cheia</span>
+                <span style="font-size: 0.85rem; color: #E9ECEF;">Com controles de Zoom e Download</span>
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3><i class="fa-solid fa-diagram-project text-cyan"></i> Mapa Mental de Tipos de Dados</h3>
+                <p>
+                  Visão estruturada que ramifica os <strong>Tipos Primitivos</strong> (int, float, bool, char, str, byte), os <strong>Tipos Compostos</strong> (listas, matrizes, tuplas, dicionários, sets e enums) e os <strong>Outros Contextos</strong> em Banco de Dados SQL e Estatística.
+                </p>
+              </div>
+              <div class="gallery-actions">
+                <button class="btn-sm btn-cyan-sm" data-lightbox-index="1">
+                  <i class="fa-solid fa-expand"></i> Ampliar
+                </button>
+                <a href="assets/images/mapa-mental.jpg" download="mapa-mental.jpg" class="btn-sm btn-gold-sm">
+                  <i class="fa-solid fa-download"></i> Baixar Imagem
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card da Imagem 3: Cheat Sheet -->
+          <article class="gallery-card">
+            <div class="gallery-image-wrapper" data-lightbox-index="2" title="Clique para abrir o Cheat Sheet e Dicas de Ouro">
+              <img src="assets/images/cheat-sheet.jpg" alt="Cheat Sheet de Tipos de Dados, Comparativo de Sintaxe e Dicas de Ouro de Programação" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="overlay-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> Abrir em Tela Cheia</span>
+                <span style="font-size: 0.85rem; color: #E9ECEF;">Com controles de Zoom e Download</span>
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3><i class="fa-solid fa-file-invoice text-gold"></i> Cheat Sheet &amp; Dicas de Ouro</h3>
+                <p>
+                  Guia rápido de consulta contendo a sintaxe de declaração nas 4 principais linguagens (Python, JS, Java e C), a tabela de <em>type casting</em> e o resumo ilustrado das <strong>3 Dicas de Ouro</strong> para evitar erros de projeto.
+                </p>
+              </div>
+              <div class="gallery-actions">
+                <button class="btn-sm btn-cyan-sm" data-lightbox-index="2">
+                  <i class="fa-solid fa-expand"></i> Ampliar
+                </button>
+                <a href="assets/images/cheat-sheet.jpg" download="cheat-sheet.jpg" class="btn-sm btn-gold-sm">
+                  <i class="fa-solid fa-download"></i> Baixar Imagem
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 4: COMPARATIVO DE SINTAXE & MINI PLAYGROUND PRÁTICO EM PYTHON
+         ========================================================================= -->
+    <section class="section alt-bg" id="comparativo">
+      <div class="container">
+        <div class="center-header">
+          <span class="section-tag"><i class="fa-solid fa-code-compare"></i> Seção 4</span>
+          <h2 class="section-title">Comparativo de Sintaxe &amp; Playground Interativo</h2>
+          <p class="section-subtitle">
+            Compare como cada tipo é declarado em diferentes linguagens e execute código Python em tempo real no console interativo da página.
+          </p>
+        </div>
+
+        <!-- Tabela Comparativa de Sintaxe Multi-Linguagem -->
+        <div class="syntax-container">
+          <div class="syntax-header">
+            <div>
+              <h3 style="font-size: 1.3rem; color: #fff; font-family: var(--font-heading);">
+                <i class="fa-solid fa-globe text-cyan"></i> Como Declarar em Cada Linguagem
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                Selecione um tipo para inspecionar e copiar o código em Python, JavaScript, Java e C:
+              </p>
+            </div>
+
+            <!-- Chips Seletores de Tipo -->
+            <div class="syntax-type-selector">
+              <button class="type-chip active" data-type="int">Inteiro (int)</button>
+              <button class="type-chip" data-type="float">Decimal (float)</button>
+              <button class="type-chip" data-type="bool">Booleano (bool)</button>
+              <button class="type-chip" data-type="string">Texto (string)</button>
+              <button class="type-chip" data-type="list">Vetor (list/array)</button>
+              <button class="type-chip" data-type="dict">Dicionário (dict/obj)</button>
+            </div>
+          </div>
+
+          <!-- Grade das 4 Linguagens -->
+          <div class="syntax-grid">
+            <!-- Python -->
+            <div class="lang-card">
+              <div class="lang-header">
+                <span class="lang-title"><i class="fa-brands fa-python text-gold"></i> Python</span>
+                <button class="copy-btn" data-target="code-python" title="Copiar código Python"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <pre class="lang-code"><code id="code-python"># Inteiro em Python (tipagem dinâmica)
+x = 10
+print(type(x))  # &lt;class 'int'&gt;</code></pre>
+              <div class="lang-notes">Tipagem dinâmica e forte. Sem ponto e vírgula.</div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="lang-card">
+              <div class="lang-header">
+                <span class="lang-title"><i class="fa-brands fa-js text-gold"></i> JavaScript</span>
+                <button class="copy-btn" data-target="code-js" title="Copiar código JS"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <pre class="lang-code"><code id="code-js">// Inteiro em JavaScript
+let x = 10;
+console.log(typeof x); // "number"</code></pre>
+              <div class="lang-notes">Tipo genérico number para inteiros e decimais.</div>
+            </div>
+
+            <!-- Java -->
+            <div class="lang-card">
+              <div class="lang-header">
+                <span class="lang-title"><i class="fa-brands fa-java text-cyan"></i> Java</span>
+                <button class="copy-btn" data-target="code-java" title="Copiar código Java"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <pre class="lang-code"><code id="code-java">// Inteiro em Java (estaticamente tipado)
+int x = 10;
+System.out.println(x);</code></pre>
+              <div class="lang-notes">Tipagem estática: tipo declarado antes do nome.</div>
+            </div>
+
+            <!-- C -->
+            <div class="lang-card">
+              <div class="lang-header">
+                <span class="lang-title"><i class="fa-solid fa-c text-cyan"></i> C (ANSI C)</span>
+                <button class="copy-btn" data-target="code-c" title="Copiar código C"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <pre class="lang-code"><code id="code-c">/* Inteiro em C (32 bits com sinal) */
+int x = 10;
+printf("%d\n", x);</code></pre>
+              <div class="lang-notes">Controle direto de memória e tipos com sinal.</div>
+            </div>
+          </div>
+
+          <!-- Nota Técnica do Comparativo -->
+          <div style="margin-top: 1.25rem; font-size: 0.88rem; color: var(--accent-gold); display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-circle-info"></i>
+            <span id="syntax-notes">No Python 3, inteiros têm precisão arbitrária ilimitada (bignum). Em C e Java, int tem limite de 32 bits (máx 2.147.483.647).</span>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             MINI PLAYGROUND / EXEMPLO PRÁTICO INTERATIVO EM PYTHON
+             ===================================================================== -->
+        <div class="playground-section" id="playground">
+          <div class="playground-header">
+            <div>
+              <h3 class="playground-title">
+                <i class="fa-brands fa-python"></i> Mini Playground Python (Simulador Interativo)
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+                Exemplo prático de cadastro, cálculo matemático e atualização de valor de variáveis em Python com inspeção de tipos via <code>type()</code>.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn-ghost" id="btn-reset" title="Restaurar valores de exemplo padrão">
+                <i class="fa-solid fa-rotate-left"></i> Restaurar
+              </button>
+              <button class="btn-ghost" id="btn-clear-console" title="Limpar terminal de saída">
+                <i class="fa-solid fa-eraser"></i> Limpar Saída
+              </button>
+            </div>
+          </div>
+
+          <!-- Painel com Controles dos Valores das Variáveis -->
+          <div style="background: rgba(5, 14, 33, 0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i class="fa-solid fa-sliders"></i> Personalize os valores das variáveis antes de executar:
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+              <div>
+                <label for="pg-nome" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">nome (str):</label>
+                <input type="text" id="pg-nome" value="Pedro" class="tester-input" style="padding: 0.5rem 0.85rem; font-size: 0.9rem; width: 100%;">
+              </div>
+              <div>
+                <label for="pg-idade" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">idade (int):</label>
+                <input type="number" id="pg-idade" value="18" class="tester-input" style="padding: 0.5rem 0.85rem; font-size: 0.9rem; width: 100%;">
+              </div>
+              <div>
+                <label for="pg-altura" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">altura (float):</label>
+                <input type="number" step="0.01" id="pg-altura" value="1.70" class="tester-input" style="padding: 0.5rem 0.85rem; font-size: 0.9rem; width: 100%;">
+              </div>
+              <div>
+                <label for="pg-estudante" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">estudante (bool):</label>
+                <select id="pg-estudante" class="tester-input" style="padding: 0.5rem 0.85rem; font-size: 0.9rem; width: 100%;">
+                  <option value="True" selected>True (Verdadeiro)</option>
+                  <option value="False">False (Falso)</option>
+                </select>
+              </div>
+              <div>
+                <label for="pg-operacao" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">operação matemática:</label>
+                <input type="text" id="pg-operacao" value="10 + 5" class="tester-input" style="padding: 0.5rem 0.85rem; font-size: 0.9rem; width: 100%;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Grade Editor vs Console -->
+          <div class="playground-grid">
+            <!-- Mockup do Editor de Código (main.py) -->
+            <div class="editor-window">
+              <div class="window-bar">
+                <div class="window-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="window-filename"><i class="fa-brands fa-python text-gold"></i> main.py</span>
+                <span style="font-size: 0.75rem; color: var(--text-dim);">UTF-8</span>
+              </div>
+              <pre class="editor-content"><code id="pg-code-display"># 1. Declaração inicial de variáveis (Cadastro):
+nome = "Pedro"
+idade = 18
+altura = 1.70
+estudante = True
+
+# 2. Operação matemática:
+soma = 10 + 5
+
+# 3. Alteração dinâmica de valor da variável idade:
+idade = 19
+
+# 4. Impressões e inspeção dos tipos (type()):
+print(f"Nome: {nome} | Tipo: {type(nome).__name__}")
+print(f"Idade atualizada: {idade} | Tipo: {type(idade).__name__}")
+print(f"Altura: {altura} | Tipo: {type(altura).__name__}")
+print(f"Estudante: {estudante} | Tipo: {type(estudante).__name__}")
+print(f"10 + 5 = {soma}")</code></pre>
+              <div class="editor-actions">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">
+                  <i class="fa-solid fa-code"></i> 100% livre de erros de sintaxe
+                </span>
+                <button class="btn-run" id="btn-run">
+                  <i class="fa-solid fa-play"></i> Executar Código
+                </button>
+              </div>
+            </div>
+
+            <!-- Mockup do Terminal de Saída -->
+            <div class="console-window">
+              <div class="window-bar" style="background: #030712;">
+                <span style="font-size: 0.82rem; font-family: var(--font-code); color: var(--accent-gold); display: flex; align-items: center; gap: 0.4rem;">
+                  <i class="fa-solid fa-terminal"></i> Terminal / Console de Saída
+                </span>
+                <span style="font-size: 0.75rem; color: var(--accent-green);"><i class="fa-solid fa-circle" style="font-size: 0.55rem;"></i> Python 3.14.7 (Active)</span>
+              </div>
+              <div class="console-output" id="console-output">
+                <!-- Saída renderizada via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             DICAS DE OURO (CARDS DE ALERTA)
+             ===================================================================== -->
+        <div id="dicas-ouro" style="scroll-margin-top: 100px;">
+          <div class="golden-tips-title">
+            <span class="section-tag gold"><i class="fa-solid fa-award"></i> Conhecimento Avançado</span>
+            <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: #fff;">As 3 Dicas de Ouro na Programação</h3>
+            <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+              Pegadinhas clássicas que todo desenvolvedor profissional deve dominar para evitar falhas silenciosas e prejuízos em produção.
+            </p>
+          </div>
+
+          <div class="golden-tips-grid">
+
+            <!-- Dica 1: Aspas Simples vs Duplas -->
+            <article class="tip-card tip-1">
+              <span class="tip-badge"><i class="fa-solid fa-quote-left"></i> Dica 1 • Sintaxe</span>
+              <h4>Aspas Simples ('A') vs. Duplas ("A")</h4>
+              <p>
+                Em linguagens compiladas como <strong>C, C++ e Java</strong>, a diferença é estrita:
+                <code>'A'</code> representa o tipo primitivo <strong>char</strong> (1 byte, código ASCII 65), enquanto <code>"A"</code> representa um ponteiro/objeto da classe <strong>String</strong>!
+              </p>
+              <p>
+                Já em <strong>Python e JavaScript</strong>, ambas têm exatamente o mesmo comportamento para strings. A boa prática é manter a consistência no projeto (PEP 8).
+              </p>
+              <div class="tip-example">
+                <span class="comment">// Java/C: Erro se misturar!</span><br>
+                char c = 'A';    <span class="comment">// Correto</span><br>
+                char c2 = "A";   <span class="text-red">// Erro de compilação!</span><br>
+                <span class="comment"># Em Python: tanto faz</span><br>
+                s1 = 'A' == "A"  <span class="text-green"># True</span>
+              </div>
+            </article>
+
+            <!-- Dica 2: Evitar float para valores monetários -->
+            <article class="tip-card tip-2">
+              <span class="tip-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Dica 2 • Financeiro</span>
+              <h4>NUNCA use Float para Valores Monetários!</h4>
+              <p>
+                Os processadores utilizam a base binária (potências de 2) para armazenar números flutuantes (IEEE 754). Frações decimais simples como <code>0.1</code> e <code>0.2</code> tornam-se <strong>dízimas periódicas infinitas em binário</strong>, gerando imprecisões catastróficas em contas bancárias.
+              </p>
+              <p>
+                <strong class="text-green">Solução:</strong> Guarde os valores em <strong>centavos inteiros</strong> (R$ 19,90 = <code>1990</code>) ou use o módulo <code>decimal.Decimal</code> em Python.
+              </p>
+              <div class="tip-example">
+                <span class="comment"># O bug clássico do float:</span><br>
+                0.1 + 0.2 == 0.3  <span class="text-red"># False!</span><br>
+                0.1 + 0.2         <span class="text-gold"># 0.30000000000000004</span><br>
+                <span class="comment"># Correto com Decimal:</span><br>
+                Decimal('0.1') + Decimal('0.2') == Decimal('0.3') <span class="text-green"># True</span>
+              </div>
+            </article>
+
+            <!-- Dica 3: Atenção ao estouro de memória (Overflow) -->
+            <article class="tip-card tip-3">
+              <span class="tip-badge"><i class="fa-solid fa-triangle-exclamation"></i> Dica 3 • Arquitetura</span>
+              <h4>Atenção ao Estouro de Memória (Overflow)</h4>
+              <p>
+                Em linguagens com tipagem estática (C, C++, Java), um inteiro de 32 bits com sinal tem limite máximo de <strong>2.147.483.647</strong> ($2^{31} - 1$). Ao somar 1 a esse valor, ocorre o <strong>overflow</strong> e o número passa a ser negativo!
+              </p>
+              <p>
+                <strong class="text-cyan">O diferencial do Python 3:</strong> Os inteiros possuem <em>precisão arbitrária</em>. Se o número crescer, o Python aloca mais memória dinamicamente, evitando o temido overflow.
+              </p>
+              <div class="tip-example">
+                <span class="comment">/* Em C: estouro perigoso */</span><br>
+                int max = 2147483647;<br>
+                max + 1; <span class="text-red">// Resultado: -2147483648 (Bug!)</span><br>
+                <span class="comment"># Em Python 3: cresce na RAM</span><br>
+                2**100   <span class="text-green"># 1267650600228229401496703205376</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MODAL LIGHTBOX EM JAVASCRIPT (AMPLIAÇÃO EM TELA CHEIA)
+       ========================================================================= -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <!-- Barra Superior de Ferramentas -->
+    <div class="lightbox-topbar">
+      <h3 class="lightbox-title" id="lightbox-title">
+        <i class="fa-solid fa-image text-cyan"></i> Visualizador de Infográfico
+      </h3>
+
+      <div class="lightbox-controls">
+        <button class="lightbox-btn" id="btn-zoom-out" title="Diminuir Zoom (-)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+        <button class="lightbox-btn" id="btn-zoom-reset" title="Restaurar Tamanho Original (100%)"><span id="lightbox-zoom-val" style="font-size: 0.72rem; font-weight: 700;">100%</span></button>
+        <button class="lightbox-btn" id="btn-zoom-in" title="Aumentar Zoom (+)"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+        <a href="#" class="lightbox-btn" id="lightbox-download-btn" title="Baixar esta imagem em alta resolução" download><i class="fa-solid fa-download"></i></a>
+        <button class="lightbox-btn btn-close" id="btn-close-lightbox" title="Fechar Visualizador (ESC)"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+
+    <!-- Área de Exibição da Imagem com Suporte a Pan e Zoom -->
+    <div class="lightbox-viewport">
+      <button class="lightbox-nav prev" id="lightbox-prev" title="Imagem Anterior (Seta Esquerda)"><i class="fa-solid fa-chevron-left"></i></button>
+      <img src="" alt="" class="lightbox-image" id="lightbox-img">
+      <button class="lightbox-nav next" id="lightbox-next" title="Próxima Imagem (Seta Direita)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Barra Inferior com Legenda -->
+    <div class="lightbox-bottombar">
+      <span id="lightbox-caption">Visualização em alta resolução. Use a roda do mouse ou botões acima para aplicar zoom.</span>
+      <span style="color: var(--text-dim);"><i class="fa-solid fa-keyboard"></i> Dica: Use ESC para fechar, setas para navegar e scroll para zoom</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER (RODAPÉ)
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>
+            <i class="fa-brands fa-python text-gold"></i>
+            Tipos de Dados &amp; Variáveis
+          </h3>
+          <p>
+            Plataforma educativa moderna para o ensino de Fundamentos de Programação, Engenharia de Software e Desenvolvimento de Sistemas.
+          </p>
+          <span class="footer-badge">
+            <i class="fa-solid fa-check-double"></i> Material Didático de Engenharia de Software
+          </span>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegação Rápida</h4>
+          <ul>
+            <li><a href="#hero"><i class="fa-solid fa-angle-right text-cyan"></i> Início</a></li>
+            <li><a href="#conceito"><i class="fa-solid fa-angle-right text-cyan"></i> O que são Variáveis?</a></li>
+            <li><a href="#tipos"><i class="fa-solid fa-angle-right text-cyan"></i> Tipos Primitivos &amp; Compostos</a></li>
+            <li><a href="#galeria"><i class="fa-solid fa-angle-right text-cyan"></i> Galeria Visual &amp; Downloads</a></li>
+            <li><a href="#comparativo"><i class="fa-solid fa-angle-right text-cyan"></i> Comparativo &amp; Playground</a></li>
+            <li><a href="#dicas-ouro"><i class="fa-solid fa-angle-right text-cyan"></i> As 3 Dicas de Ouro</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Recursos Integrados</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+            Imagens ilustrativas inclusas no projeto:
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
+            <li><a href="assets/images/variaveis-python.png" download><i class="fa-regular fa-file-image text-cyan"></i> variaveis-python.png</a></li>
+            <li><a href="assets/images/mapa-mental.jpg" download><i class="fa-regular fa-file-image text-gold"></i> mapa-mental.jpg</a></li>
+            <li><a href="assets/images/cheat-sheet.jpg" download><i class="fa-regular fa-file-image text-green"></i> cheat-sheet.jpg</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Material Educativo de Desenvolvimento de Sistemas / Engenharia de Software</strong>. Todos os direitos reservados.
+        </div>
+        <button class="btn-top" id="btn-top" title="Voltar ao início da página">
+          <i class="fa-solid fa-arrow-up"></i> Voltar ao topo
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Vanilla JavaScript Principal -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
