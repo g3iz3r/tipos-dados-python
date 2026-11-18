@@ -64,8 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking any link
-    navLinks.forEach((link) => {
+    // Close menu when clicking any link inside the navigation
+    const allNavAnchors = navMenu.querySelectorAll('a');
+    allNavAnchors.forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         const icon = navToggle.querySelector('i');
